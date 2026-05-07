@@ -36,7 +36,7 @@ def init_db():
     - keterangan: catatan tambahan
     - tanggal: format YYYY-MM-DD
     """
-    db = sqlite3.connect(current_app.config['DATABASE'])
+    db = sqlite3.connect('database.db')
     db.execute("""
         CREATE TABLE IF NOT EXISTS transaksi (
             id          INTEGER PRIMARY KEY AUTOINCREMENT,
