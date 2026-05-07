@@ -2,9 +2,7 @@
 SIAKTERNAK - Sistem Informasi Akuntansi Peternakan
 Entry point aplikasi Flask
 """
-
 import os
-
 from flask import Flask
 from flask_cors import CORS
 from routes import transaksi_bp, laporan_bp
@@ -28,9 +26,5 @@ with app.app_context():
     init_db()
 
 if __name__ == '__main__':
-    with app.app_context():
-    init_db()
-    # Railway menyediakan PORT melalui environment variable
-    # Fallback ke 5000 saat dijalankan secara lokal
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
